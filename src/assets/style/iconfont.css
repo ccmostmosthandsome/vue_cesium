@@ -1,0 +1,13 @@
+@import url('//at.alicdn.com/t/font_1657665_pixvvetwcq.css');
+
+[class*=' el-icon-lx'],
+[class^='el-icon-lx'] {
+  font-family: lx-iconfont !important;
+}
+.iconfont {
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}

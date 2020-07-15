@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 16:00:08
+ * @LastEditTime: 2020-07-15 18:12:37
  * @Description:
  */
 'use strict'
@@ -14,7 +14,7 @@ const CopywebpackPlugin = require('copy-webpack-plugin') //复制文件
 let resolve = dir => {
   return path.resolve(__dirname, dir)
 }
-console.log('==========resolve是什么=========', resolve)
+console.log('==========当前运行环境=========', process.env.NODE_ENV)
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? './' : './',

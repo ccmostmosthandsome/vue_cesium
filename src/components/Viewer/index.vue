@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 16:41:59
+ * @LastEditTime: 2020-07-15 18:29:50
  * @Description:
  -->
 <template>
@@ -35,7 +35,7 @@ export default {
     }
   },
   mounted() {
-    this.initViewer()
+    this.initViewer();
   }
 }
 </script>

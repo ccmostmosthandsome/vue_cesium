@@ -6,7 +6,6 @@
  * @Description:
  */
 import Vue from 'vue'
-
 import 'cesium/Widgets/widgets.css'
 
 const hub = new Vue()

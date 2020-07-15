@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 17:08:26
+ * @LastEditTime: 2020-07-15 18:35:39
  * @Description:
  */
 import '@/plugin/elementui.js'
@@ -34,5 +34,6 @@ import '@/assets/style/include.less'
         next()
       }
     })
-  })
+  });
 })()
+

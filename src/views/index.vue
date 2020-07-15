@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 17:11:57
+ * @LastEditTime: 2020-07-15 18:36:51
  * @Description:
 -->
 <template>
@@ -24,6 +24,9 @@ export default {
       }
       viewer.imageryLayers.addImageryProvider(new Cesium.BaiduImageryProvider(options))
     }
+  },
+  mounted() {
+    this.$loading.open()
   }
 }
 </script>

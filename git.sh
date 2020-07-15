@@ -2,8 +2,8 @@
  # @Author: wangchaoxu
  # @Date: 2020-07-15 19:27:22
  # @LastEditors: wangchaoxu
- # @LastEditTime: 2020-07-15 19:27:32
- # @Description:
+ # @LastEditTime: 2020-07-15 19:30:07
+ # @Description: git 自动提交脚本,放到当前项目下 window需要安装Git Bash
 ###
 
 #!/bin/bash

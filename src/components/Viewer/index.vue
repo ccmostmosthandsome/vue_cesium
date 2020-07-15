@@ -2,11 +2,13 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 18:29:50
+ * @LastEditTime: 2020-07-15 19:18:34
  * @Description:
  -->
 <template>
-  <div id="viewer-container" class="viewer-container"></div>
+  <div id="viewer-container" class="viewer-container">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
@@ -35,7 +37,7 @@ export default {
     }
   },
   mounted() {
-    this.initViewer();
+    this.initViewer()
   }
 }
 </script>

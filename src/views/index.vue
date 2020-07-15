@@ -2,12 +2,14 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 18:36:51
+ * @LastEditTime: 2020-07-15 19:24:41
  * @Description:
 -->
 <template>
   <div class="index">
-    <viewer @on-viewer-completed="viewerCompletedHandler"></viewer>
+    <viewer @on-viewer-completed="viewerCompletedHandler">
+      <div class="box" style="width:200px;height:200px;background-color:red" v-drag></div>
+    </viewer>
   </div>
 </template>
 
@@ -27,6 +29,9 @@ export default {
   },
   mounted() {
     this.$loading.open()
+    setTimeout(() => {
+      this.$loading.close()
+    }, 1000)
   }
 }
 </script>

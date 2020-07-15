@@ -2,10 +2,11 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 18:35:39
+ * @LastEditTime: 2020-07-15 19:01:23
  * @Description:
  */
 import '@/plugin/elementui.js'
+import '@/plugin/drag.js'
 import appLoader from './App.Loader'
 import '@/assets/style/include.less'
 ;(async () => {
@@ -34,6 +35,5 @@ import '@/assets/style/include.less'
         next()
       }
     })
-  });
+  })
 })()
-

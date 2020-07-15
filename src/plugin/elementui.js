@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-03-29 12:53:34
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 18:46:14
+ * @LastEditTime: 2020-07-15 19:09:00
  * @Description:
  */
 import Vue from 'vue'
@@ -126,10 +126,10 @@ Vue.prototype.$loading = {
     })
     setTimeout(() => {
       // 设定定时器，超时5S后自动关闭遮罩层，避免请求失败时，遮罩层一直存在的问题
-      // this.loading.close() // 关闭遮罩层
+      this.loading.close() // 关闭遮罩层
     }, 5000)
   },
   close() {
-    this.loading.service.close()
+    this.loading.close()
   }
 }

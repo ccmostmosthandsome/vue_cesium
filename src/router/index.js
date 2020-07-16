@@ -1,7 +1,14 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+/*
+ * @Author: wangchaoxu
+ * @Date: 2020-07-15 20:07:10
+ * @LastEditors: wangchaoxu
+ * @LastEditTime: 2020-07-16 15:15:14
+ * @Description:
+ */
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -14,10 +21,10 @@ const routes = [
     name: '/login',
     component: () => import('@/views/login')
   }
-]
+];
 
 const router = new VueRouter({
   routes
-})
+});
 
-export default router
+export default router;

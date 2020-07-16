@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-13 17:08:39
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 17:33:14
+ * @LastEditTime: 2020-07-16 14:51:54
  * @Description:
  -->
 <template>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { login } from '@/api'
+import { login } from '@/api';
 export default {
   name: 'Login',
   data() {
@@ -59,38 +59,38 @@ export default {
         username: [{ required: true, message: '请输入用户名' }],
         passworld: [{ required: true, message: '请输入用户名' }]
       }
-    }
+    };
   },
   methods: {
     submitForm() {
       this.$refs.login.validate(valid => {
         if (valid) {
           if (this.form.username == 'admin' && this.form.passworld == 'admin') {
-            this.$router.push('/index')
+            this.$router.push('/index');
           } else {
-            this.$message.error('账号或密码错误,请核实后登陆')
-            return false
+            this.$message.error('账号或密码错误,请核实后登陆');
+            return false;
           }
         } else {
-          this.$message.error('请输入账号和密码')
-          return false
+          this.$message.error('请输入账号和密码');
+          return false;
         }
-      })
+      });
     },
     //密码的隐藏和显示
     showPass() {
       //点击图标是密码隐藏或显示
       if (this.passworldIcon == 'icon-icon-test1') {
-        this.passworldIcon = 'icon-xianshi'
-        this.passw = 'text'
+        this.passworldIcon = 'icon-xianshi';
+        this.passw = 'text';
         //更换图标
       } else {
-        this.passworldIcon = 'icon-icon-test1'
-        this.passw = 'password'
+        this.passworldIcon = 'icon-icon-test1';
+        this.passw = 'password';
       }
     }
   }
-}
+};
 </script>
 
 <style scoped lang="less">

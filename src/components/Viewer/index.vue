@@ -2,44 +2,37 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 19:18:34
+ * @LastEditTime: 2020-07-16 18:27:03
  * @Description:
  -->
 <template>
-  <div id="viewer-container" class="viewer-container">
+  <div id="cesiumContainer" class="viewer-container">
     <slot></slot>
   </div>
 </template>
 
 <script>
+console.log('第一个');
+import wcesium from '@/wcesium';
+
 export default {
   name: 'Viewer',
   data() {
-    return {}
+    return {};
   },
   methods: {
     initViewer() {
-      let viewer = new Cesium.Viewer('viewer-container', {
-        animation: false,
-        fullscreenButton: false,
-        vrButton: false,
-        geocoder: false,
-        selectionIndicator: false,
-        timeline: false,
-        infoBox: false
-      })
-      viewer.cesiumWidget._creditContainer.style.display = 'none'
-      viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK)
-      viewer.scene.screenSpaceCameraController.maximumZoomDistance = 40489014.0
-      viewer.scene.backgroundColor = Cesium.Color.TRANSPARENT
-      viewer.scene.debugShowFramesPerSecond = true
-      this.$emit('on-viewer-completed', viewer)
+      const viewer = wcesium.initViewer();
+      wcesium.addNav(viewer);
+      wcesium.addLayer(viewer);
+      wcesium.addBoundary(viewer);
+      this.$emit('on-viewer-completed', viewer); //调用父组件
     }
   },
   mounted() {
-    this.initViewer()
+    this.initViewer();
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

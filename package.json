@@ -10,7 +10,8 @@
   "dependencies": {
     "@dvgis/cesium-map": "^2.0.1",
     "axios": "^0.19.0",
-    "cesium": "^1.67.0",
+    "cesium": "^1.71.0",
+    "cesium-navigation-es6": "^1.1.6",
     "core-js": "^3.6.4",
     "element-ui": "^2.13.2",
     "vue": "^2.6.11",
@@ -18,6 +19,9 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-plugin-router": "^4.1.0",

@@ -1,3 +1,10 @@
+/*
+ * @Author: wangchaoxu
+ * @Date: 2020-07-15 20:07:10
+ * @LastEditors: wangchaoxu
+ * @LastEditTime: 2020-07-16 14:50:07
+ * @Description:
+ */
 module.exports = {
   root: true,
   env: {
@@ -35,4 +42,4 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   }
-}
+};

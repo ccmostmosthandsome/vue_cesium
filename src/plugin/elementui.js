@@ -2,10 +2,10 @@
  * @Author: wangchaoxu
  * @Date: 2020-03-29 12:53:34
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 19:09:00
+ * @LastEditTime: 2020-07-16 15:15:25
  * @Description:
  */
-import Vue from 'vue'
+import Vue from 'vue';
 import {
   Pagination,
   Dialog,
@@ -55,61 +55,61 @@ import {
   Cascader,
   MessageBox,
   Loading
-} from 'element-ui'
+} from 'element-ui';
 // fade/zoom 等
-import 'element-ui/lib/theme-chalk/base.css'
+import 'element-ui/lib/theme-chalk/base.css';
 // collapse 展开折叠
-import CollapseTransition from 'element-ui/lib/transitions/collapse-transition'
-import VueRouter from 'vue-router'
-Vue.component(CollapseTransition.name, CollapseTransition)
-Vue.use(Pagination)
-Vue.use(Dialog)
-Vue.use(Dropdown)
-Vue.use(DropdownMenu)
-Vue.use(DropdownItem)
-Vue.use(Menu)
-Vue.use(Submenu)
-Vue.use(MenuItem)
-Vue.use(Input)
-Vue.use(Radio)
-Vue.use(RadioGroup)
-Vue.use(RadioButton)
-Vue.use(Checkbox)
-Vue.use(CheckboxButton)
-Vue.use(CheckboxGroup)
-Vue.use(Switch)
-Vue.use(Select)
-Vue.use(Option)
-Vue.use(OptionGroup)
-Vue.use(Button)
-Vue.use(ButtonGroup)
-Vue.use(Table)
-Vue.use(TableColumn)
-Vue.use(DatePicker)
-Vue.use(TimeSelect)
-Vue.use(TimePicker)
-Vue.use(Form)
-Vue.use(FormItem)
-Vue.use(Tabs)
-Vue.use(TabPane)
-Vue.use(Tag)
-Vue.use(Tree)
-Vue.use(Slider)
-Vue.use(Icon)
-Vue.use(Avatar)
-Vue.use(Collapse)
-Vue.use(CollapseItem)
-Vue.use(Row)
-Vue.use(Col)
-Vue.use(Main)
-Vue.use(Header)
-Vue.use(Container)
-Vue.use(Upload)
-Vue.use(Cascader)
-Vue.use(Loading.directive)
-Vue.prototype.$message = Message
-Vue.prototype.$prompt = MessageBox.prompt
-Vue.prototype.$confirm = MessageBox.confirm
+import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
+import VueRouter from 'vue-router';
+Vue.component(CollapseTransition.name, CollapseTransition);
+Vue.use(Pagination);
+Vue.use(Dialog);
+Vue.use(Dropdown);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(Menu);
+Vue.use(Submenu);
+Vue.use(MenuItem);
+Vue.use(Input);
+Vue.use(Radio);
+Vue.use(RadioGroup);
+Vue.use(RadioButton);
+Vue.use(Checkbox);
+Vue.use(CheckboxButton);
+Vue.use(CheckboxGroup);
+Vue.use(Switch);
+Vue.use(Select);
+Vue.use(Option);
+Vue.use(OptionGroup);
+Vue.use(Button);
+Vue.use(ButtonGroup);
+Vue.use(Table);
+Vue.use(TableColumn);
+Vue.use(DatePicker);
+Vue.use(TimeSelect);
+Vue.use(TimePicker);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(Tag);
+Vue.use(Tree);
+Vue.use(Slider);
+Vue.use(Icon);
+Vue.use(Avatar);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
+Vue.use(Row);
+Vue.use(Col);
+Vue.use(Main);
+Vue.use(Header);
+Vue.use(Container);
+Vue.use(Upload);
+Vue.use(Cascader);
+Vue.use(Loading.directive);
+Vue.prototype.$message = Message;
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$confirm = MessageBox.confirm;
 //this.loading.open(); this.loading.close();
 Vue.prototype.$loading = {
   loading: null,
@@ -123,13 +123,13 @@ Vue.prototype.$loading = {
       target: '.sub-main', // 需要遮罩的区域
       body: true,
       customClass: 'mask' // 遮罩层新增类名
-    })
+    });
     setTimeout(() => {
       // 设定定时器，超时5S后自动关闭遮罩层，避免请求失败时，遮罩层一直存在的问题
-      this.loading.close() // 关闭遮罩层
-    }, 5000)
+      this.loading.close(); // 关闭遮罩层
+    }, 5000);
   },
   close() {
-    this.loading.close()
+    this.loading.close();
   }
-}
+};

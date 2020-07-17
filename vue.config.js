@@ -2,8 +2,8 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 15:21:17
- * @Description:
+ * @LastEditTime: 2020-07-17 15:25:44
+ * @Description: vue配置文件
  */
 'use strict';
 const path = require('path');
@@ -38,14 +38,6 @@ module.exports = {
       }
     }
   },
-  // configureWebpack: {
-  //   module: {
-  //     unknownContextCritical: false
-  //   },
-  //   performance: {
-  //     hints: false
-  //   }
-  // },
   configureWebpack: config => {
     if (env === 'production') {
       config.plugins.push(

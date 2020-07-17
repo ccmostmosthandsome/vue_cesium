@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 16:51:09
+ * @LastEditTime: 2020-07-17 14:48:26
  * @Description:
  */
 import Vue from 'vue';
@@ -24,7 +24,6 @@ new Vue({
 });
 // 路由拦截守卫
 router.beforeEach((to, from, next) => {
-  console.log('走到这里了');
   document.title = `${to.meta.title} | 威盾智能监控`;
   // 路由配置出声明是否需要登陆访问
   if (to.meta.needLogin) {

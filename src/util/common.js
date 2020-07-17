@@ -121,7 +121,6 @@ export function formatDegree(value) {
 export function DegreeConvertBack(value) {
   var du = value.split('°')[0];
   var fen = value.split('°')[1].split('′')[0];
-  console.log(value.split('°')[1].split('′')[1]);
   var miao = value
     .split('°')[1]
     .split('′')[1]
@@ -278,7 +277,6 @@ function debounce(func, wait, immediate) {
       var callNow = !timeout;
       timeout = setTimeout(() => {
         timeout = null;
-
       }, wait);
       if (callNow) func.apply(context, args);
     } else {

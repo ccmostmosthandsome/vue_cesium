@@ -2,11 +2,11 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-16 17:00:16
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 17:09:58
+ * @LastEditTime: 2020-07-17 14:53:56
  * @Description:添加边界线
  */
-function addBoundary(viewer) {
-  let promise = Cesium.GeoJsonDataSource.load('./data/410324.json');
+function addBoundary(viewer,url) {
+  let promise = Cesium.GeoJsonDataSource.load(url);
   promise.then(function(dataSource) {
     viewer.dataSources.add(dataSource);
     var entities = dataSource.entities.values;

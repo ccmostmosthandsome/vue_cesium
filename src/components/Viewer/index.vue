@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 18:27:03
+ * @LastEditTime: 2020-07-17 14:54:43
  * @Description:
  -->
 <template>
@@ -18,14 +18,16 @@ import wcesium from '@/wcesium';
 export default {
   name: 'Viewer',
   data() {
-    return {};
+    return {
+      url: require('@/assets/data/410324.json')
+    };
   },
   methods: {
     initViewer() {
       const viewer = wcesium.initViewer();
       wcesium.addNav(viewer);
       wcesium.addLayer(viewer);
-      wcesium.addBoundary(viewer);
+      wcesium.addBoundary(viewer, this.url);
       this.$emit('on-viewer-completed', viewer); //调用父组件
     }
   },

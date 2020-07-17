@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-15 20:35:20
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 18:55:08
+ * @LastEditTime: 2020-07-17 14:01:39
  * @Description: 添加底部鼠标移动info*/
 
 import { isFunction } from './type.js';
@@ -22,8 +22,6 @@ function mouseMove(viewer, callback) {
       if (isFunction(callback)) {
         callback(cityLng, cityLat, height, cartesian);
       }
-    } else {
-      //不能获取不显示
     }
   }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
   return handler;

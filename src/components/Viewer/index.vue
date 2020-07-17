@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 18:27:41
+ * @LastEditTime: 2020-07-17 19:27:33
  * @Description:
  -->
 <template>
@@ -28,6 +28,9 @@ export default {
       wcesium.addNav(viewer);
       wcesium.addLayer(viewer);
       wcesium.addBoundary(viewer, this.url);
+      wcesium.leftSingleClick(viewer, function(res) {
+        console.log(res);
+      });
       this.$emit('on-viewer-completed', viewer); //调用父组件
     }
   },

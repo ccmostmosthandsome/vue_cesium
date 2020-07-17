@@ -2,25 +2,31 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 18:43:05
+ * @LastEditTime: 2020-07-17 19:34:11
  * @Description:
 -->
 <template>
   <div class="index">
-    <viewer @on-viewer-completed="viewerCompletedHandler">
+    <div class="handle-btn">
+      <button @click="handleaddLabel">添加label</button>
+      <button>添加billboard</button>
+      <button @click="handleGet">获取</button>
+      <button>删除Marker</button>
+    </div>
+    <Wviewer @on-viewer-completed="viewerCompletedHandler">
       <div class="box" style="width:200px;height:200px;background-color:red" v-drag></div>
       <winfo ref="moseInfo"></winfo>
-    </viewer>
+    </Wviewer>
   </div>
 </template>
 
 <script>
-import viewer from '@/components/Viewer';
+import Wviewer from '@/components/Viewer';
 import winfo from '@/components/MoveInfo';
 import wcesium from '@/wcesium';
 export default {
   name: 'Index',
-  components: { viewer, winfo },
+  components: { Wviewer, winfo },
   data() {
     return {
       viewer: ''
@@ -30,6 +36,13 @@ export default {
     viewerCompletedHandler(viewer) {
       global.viewer = viewer;
       this.$refs.moseInfo.getInfo(viewer);
+    },
+    handleaddLabel() {
+      console.log(global);
+      wcesium.addLabel(global.viewer);
+    },
+    handleGet(){
+      console.log(wcesium.getAllEntitys(global.viewer))
     }
   },
   mounted() {

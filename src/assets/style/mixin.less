@@ -1,0 +1,63 @@
+/* less mixin */
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// 边框
+.border(@color:red) {
+  box-sizing: border-box;
+  border: 1px solid @color;
+}
+// 背景图片
+.bgImg(@width:823.3px,@height:433.3px,@count:'1-1') {
+  background: url('~@/assets/images/@{count}.png') no-repeat;
+  background-size: @width @height;
+  background-position: 0 0;
+}
+// 文字样式
+.text(@size:16px,@color:rgba(253, 253, 253, 1),@family:SimHei,@weight:400) {
+  font-size: @size;
+  font-family: @family;
+  font-weight: @weight;
+  color: @color;
+}
+
+// 浮动
+.float(@f: left) {
+  float: @f;
+}
+// 清除浮动
+.clearfix() {
+  zoom: 1;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// 设置宽高
+.size(@w, @h) {
+  width: @w;
+  height: @h;
+}
+// 标题一行，多余用省略号
+.text-overflow {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// 文字不换行
+.word-noWrap {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: normal;
+}
+// 圆角
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}

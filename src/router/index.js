@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-15 20:07:10
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 15:28:06
+ * @LastEditTime: 2020-07-17 16:40:29
  * @Description:
  */
 import Vue from 'vue';
@@ -14,13 +14,13 @@ const routes = [
   {
     path: '/index',
     name: 'index',
-    title: '首页',
+    meta: { title: '首页' },
     component: () => import('@/views')
   },
   {
     path: '/',
     name: '/login',
-    title: '登陆',
+    meta: { title: '登陆' },
     component: () => import('@/views/login')
   }
 ];

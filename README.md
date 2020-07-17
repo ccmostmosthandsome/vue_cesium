@@ -4,7 +4,7 @@
 
 ## 演示
 
-[演示](http://wangchaoxu.gitee.io/vue_cesium/#/)
+[演示](http://wangyoujin.gitee.io/vue_cesium/#/)
 
 ## 安装
 

@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-15 18:12:37
+ * @LastEditTime: 2020-07-17 13:48:45
  * @Description:
  */
 'use strict';
@@ -46,7 +46,13 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.extensions.add('.js').add('.vue');
-    config.resolve.alias.set('cesium', path.resolve(__dirname, cesiumBuild));
+    config.resolve.alias
+      .set('cesium', path.resolve(__dirname, cesiumBuild))
+      .set('@', resolve('src'))
+      .set('@assets', resolve('src/assets'))
+      .set('@images', resolve('src/images'))
+      .set('@cmp', resolve('src/components'))
+      .set('@views', resolve('src/views'))
     config.module
       .rule('images')
       .test(/\.(png|jpe?g|gif)(\?.*)?$/)
@@ -57,7 +63,6 @@ module.exports = {
         limit: 10000
       })
       .end();
-
     config.module
       .rule('fonts')
       .test(/\.(eot|ttf|woff|woff2)(\?.*)?$/)

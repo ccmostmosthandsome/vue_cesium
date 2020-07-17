@@ -264,26 +264,26 @@ function throttle(func, wait, type) {
 }
 /**
  * @desc 函数防抖
- * @param func 目标函数
+ * @param func 函数
  * @param wait 延迟执行毫秒数
- * @param immediate true - 立即执行， false - 延迟执行
+ * @param immediate true 表立即执行，false 表非立即执行
  */
 function debounce(func, wait, immediate) {
-  let timer;
+  let timeout;
   return function() {
-    let context = this,
-      args = arguments;
-
-    if (timer) clearTimeout(timer);
+    let context = this;
+    let args = arguments;
+    if (timeout) clearTimeout(timeout);
     if (immediate) {
-      let callNow = !timer;
-      timer = setTimeout(() => {
-        timer = null;
+      var callNow = !timeout;
+      timeout = setTimeout(() => {
+        timeout = null;
+
       }, wait);
       if (callNow) func.apply(context, args);
     } else {
-      timer = setTimeout(() => {
-        func.apply;
+      timeout = setTimeout(function() {
+        func.apply(context, args);
       }, wait);
     }
   };

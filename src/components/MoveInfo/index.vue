@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-16 18:27:28
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 19:24:20
+ * @LastEditTime: 2020-07-17 13:51:29
  * @Description:
 -->
 <template>
@@ -15,7 +15,7 @@
       <el-col :span="1">视角高:</el-col>
       <el-col :span="4">{{ height }}千米</el-col>
       <el-col :span="1">当前位置:</el-col>
-      <el-col :span="4">{{ info }}千米</el-col>
+      <el-col :span="4">{{ info }}</el-col>
     </el-row>
   </div>
 </template>
@@ -29,37 +29,35 @@ export default {
   data() {
     return {
       info: null,
-      lng: null,
-      lat: null,
-      height: null,
-      mouseTimer: null
+      lng: 113.254786,
+      lat: 36.3547211,
+      height: 100,
+      timer: null
     };
   },
   methods: {
     getInfo(viewer) {
       wcesium.mouseMove(viewer, (cityLng, cityLat, height) => {
-        // console.log(cityLng, cityLat, height);
         this.lng = cityLng;
         this.lat = cityLat;
         this.height = height;
-        // this.getCityInfo(this.lng, this.lat);
+        clearTimeout(this.timer);
+        this.timer = setTimeout(() => {
+          this.getCityInfo(this.lng, this.lat);
+        }, 500);
       });
     },
     getCityInfo(lng, lat) {
-      clearTimeout(this.mouseTimer);
-      this.mouseTimer = setTimeout(function() {
-        api.getCityMsg({ lng: lng, lat: lat }).then(res => {
-          let a = res.regeocode.addressComponent;
-          this.info = a.province + a.city + a.district + a.township;
-          console.log(this.info);
-        });
-      }, 800);
+      console.log(111);
+      api.getCityMsg({ lng, lat }).then(res => {
+        let a = res.regeocode.addressComponent;
+        this.info = a.province + a.city + a.district + a.township;
+      });
     }
   },
   created() {},
   mounted() {},
-  computed: {},
-  watch: {}
+  computed: {}
 };
 </script>
 

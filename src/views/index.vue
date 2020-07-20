@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 19:34:11
+ * @LastEditTime: 2020-07-20 08:43:49
  * @Description:
 -->
 <template>
@@ -15,7 +15,7 @@
     </div>
     <Wviewer @on-viewer-completed="viewerCompletedHandler">
       <div class="box" style="width:200px;height:200px;background-color:red" v-drag></div>
-      <winfo ref="moseInfo"></winfo>
+      <winfo ref="mouseInfo"></winfo>
     </Wviewer>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
   methods: {
     viewerCompletedHandler(viewer) {
       global.viewer = viewer;
-      this.$refs.moseInfo.getInfo(viewer);
+      this.$refs.mouseInfo.getInfo(viewer);
     },
     handleaddLabel() {
       console.log(global);

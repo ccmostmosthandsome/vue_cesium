@@ -2,12 +2,11 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-15 20:35:20
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 14:01:39
+ * @LastEditTime: 2020-07-20 08:42:48
  * @Description: 添加底部鼠标移动info*/
 
 import { isFunction } from './type.js';
 function mouseMove(viewer, callback) {
-  console.log(viewer);
   var handler = new Cesium.ScreenSpaceEventHandler(viewer.canvas);
   var scene = viewer.scene;
   handler.setInputAction(function(event) {

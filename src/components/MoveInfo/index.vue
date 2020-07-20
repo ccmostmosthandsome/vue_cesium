@@ -48,7 +48,6 @@ export default {
       });
     },
     getCityInfo(lng, lat) {
-      console.log(111);
       api.getCityMsg({ lng, lat }).then(res => {
         let a = res.regeocode.addressComponent;
         this.info = a.province + a.city + a.district + a.township;

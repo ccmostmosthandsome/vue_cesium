@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 19:27:33
+ * @LastEditTime: 2020-07-20 08:42:23
  * @Description:
  -->
 <template>
@@ -12,7 +12,6 @@
 </template>
 
 <script>
-console.log('第一个');
 import wcesium from '@/wcesium';
 
 export default {

@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 15:25:44
+ * @LastEditTime: 2020-07-20 11:42:03
  * @Description: vue配置文件
  */
 'use strict';
@@ -32,6 +32,7 @@ module.exports = {
         target: 'https://restapi.amap.com', //访问地址
         changeOrigin: true,
         secure: false, //只有代理https 地址需要次选项
+        logLevel:'debug',//可以打印出代理后请求的真实地址
         pathRewrite: {
           '^/baiduApi': ''
         }

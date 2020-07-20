@@ -1,11 +1,13 @@
 /*
  * @Author: wangchaoxu
- * @Date: 2020-07-16 16:42:17
+ * @Date: 2020-07-20 19:13:02
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 17:50:26
- * @Description: 添加指南针
+ * @LastEditTime: 2020-07-20 19:20:56
+ * @Description: cesium的扩展功能
  */
 import CesiumNavigation from 'cesium-navigation-es6';
+import { isFunction } from './core';
+import { mouseMove } from './mouse';
 function addNav(viewer) {
   var options = {
     // 用于在使用重置导航重置地图视图时设置默认视图控制。接受的值是Cesium.Cartographic 和 Cesium.Rectangle.
@@ -22,4 +24,15 @@ function addNav(viewer) {
   CesiumNavigation(viewer, options);
 }
 
-export default addNav;
+function moveGetInfo(viewer, callback) {
+  mouseMove(viewer, function(cartographic) {
+    let cityLng = Cesium.Math.toDegrees(cartographic.longitude);
+    let cityLat = Cesium.Math.toDegrees(cartographic.latitude);
+    let height = Math.ceil(viewer.camera.positionCartographic.height / 1000);
+    if (isFunction(callback)) {
+      callback(cityLng, cityLat, height);
+    }
+  });
+}
+
+export { addNav, moveGetInfo };

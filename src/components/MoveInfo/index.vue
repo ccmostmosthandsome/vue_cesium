@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-16 18:27:28
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 13:51:29
+ * @LastEditTime: 2020-07-20 19:21:56
  * @Description:
 -->
 <template>
@@ -15,7 +15,7 @@
       <el-col :span="1">视角高:</el-col>
       <el-col :span="4">{{ height }}千米</el-col>
       <el-col :span="1">当前位置:</el-col>
-      <el-col :span="4">{{ info }}</el-col>
+      <el-col :span="6">{{ info }}</el-col>
     </el-row>
   </div>
 </template>
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     getInfo(viewer) {
-      wcesium.mouseMove(viewer, (cityLng, cityLat, height) => {
+      wcesium.moveGetInfo(viewer, (cityLng, cityLat, height) => {
         this.lng = cityLng;
         this.lat = cityLat;
         this.height = height;

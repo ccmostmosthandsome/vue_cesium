@@ -27,7 +27,7 @@ export default {
       wcesium.addNav(viewer);
       wcesium.addLayer(viewer);
       wcesium.addBoundary(viewer, this.url);
-      wcesium.leftSingleClick(viewer, function(res) {
+      wcesium.clickGetEntitties(viewer, function(res) {
         console.log(res);
       });
       this.$emit('on-viewer-completed', viewer); //调用父组件

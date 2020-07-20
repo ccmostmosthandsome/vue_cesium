@@ -2,18 +2,38 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-15 20:32:58
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-17 19:34:29
+ * @LastEditTime: 2020-07-20 19:23:54
  * @Description:引入cesium的方法
  */
 
-import initViewer from './initViewer.js';
-import flyTo from './flyTo.js';
-import addNav from './addNav.js';
-import addLayer from './addLayer.js';
-import addBoundary from './addBoundary.js';
-import mouseMove from './mouseMove.js';
-import addLabel from './addLabel.js';
-import leftSingleClick from './leftSingleClick.js';
-import getAllEntitys from './getAllEntitys.js';
+import initViewer from './initViewer';
+import flyTo from './flyTo';
+import { addNav, moveGetInfo } from './other';
+import { addLayer, getAllLayer,getLayerByAttr, removeAllLayer, removeLayerByAttr } from './layer';
+import addBoundary from './addBoundary';
+import { leftSingleClick, mouseMove } from './mouse';
+import { addLabel, addBillboard, addMarker, getAllEntities, getEntitysByAttr, removeAllEntities, removeEntitiesByAttr, clickGetEntitties, clickRemoveEntities } from './entities';
 
-export default { initViewer, flyTo, addNav, addLayer, addBoundary, mouseMove, addLabel, leftSingleClick, getAllEntitys };
+export default {
+  initViewer,
+  flyTo,
+  addNav,
+  moveGetInfo,
+  addLayer,
+  getAllLayer,
+  getLayerByAttr,
+  removeAllLayer,
+  removeLayerByAttr,
+  addBoundary,
+  mouseMove,
+  addLabel,
+  addBillboard,
+  addMarker,
+  getAllEntities,
+  getEntitysByAttr,
+  removeAllEntities,
+  removeEntitiesByAttr,
+  clickRemoveEntities,
+  clickGetEntitties,
+  leftSingleClick
+};

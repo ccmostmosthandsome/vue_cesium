@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-15 20:32:58
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-21 17:00:07
+ * @LastEditTime: 2020-07-21 19:00:57
  * @Description:引入cesium的方法
  */
 import { initViewer, flyTo } from './viewer';

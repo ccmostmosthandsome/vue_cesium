@@ -2,12 +2,13 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-21 09:07:12
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-21 16:35:33
+ * @LastEditTime: 2020-07-21 18:38:03
  * @Description:关于视图的操作
  */
 
 import config from './config';
 import { cloneDeep } from './core';
+
 function initViewer(config = {}) {
   let option = {
     //放大镜图标，查找位置工具，查找到之后会将镜头对准找到的地址，默认使用bing地图

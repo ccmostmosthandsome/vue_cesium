@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-20 17:46:37
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-20 19:15:33
+ * @LastEditTime: 2020-07-21 19:11:33
  * @Description:鼠标事件
  */
 import { isFunction } from './core.js';
@@ -39,12 +39,6 @@ function mouseMove(viewer, callback) {
       if (isFunction(callback)) {
         callback(cartographic);
       }
-      // let cityLng = Cesium.Math.toDegrees(cartographic.longitude);
-      // let cityLat = Cesium.Math.toDegrees(cartographic.latitude);
-      // let height = Math.ceil(viewer.camera.positionCartographic.height / 1000);
-      // if (isFunction(callback)) {
-      //   callback(cityLng, cityLat, height, cartesian);
-      // }
     }
   }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
   return handler;

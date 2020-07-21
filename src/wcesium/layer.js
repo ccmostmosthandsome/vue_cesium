@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-16 16:47:59
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-20 19:27:32
+ * @LastEditTime: 2020-07-21 19:00:29
  * @Description:
  */
 //需要安装@dvgis/cesium-map,然后在mian.js中引入 import('@dvgis/cesium-map/build/cesium-map/cesium-map.min');

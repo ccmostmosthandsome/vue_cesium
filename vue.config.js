@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-21 16:04:46
+ * @LastEditTime: 2020-07-21 18:24:31
  * @Description: vue配置文件
  */
 'use strict';
@@ -17,8 +17,7 @@ const env = process.env.NODE_ENV;
 let resolve = dir => {
   return path.resolve(__dirname, dir);
 };
-console.log('==========当前运行环境=========', env);
-
+console.log(`==========当前运行环境:${env}=========`);
 module.exports = {
   publicPath: env === 'production' ? './' : './',
   productionSourceMap: env === 'development',

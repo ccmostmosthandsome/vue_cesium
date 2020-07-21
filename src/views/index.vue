@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-21 17:26:46
+ * @LastEditTime: 2020-07-21 18:53:47
  * @Description:
 -->
 <template>
@@ -41,7 +41,7 @@ export default {
   methods: {
     viewerCompletedHandler(viewer) {
       global.viewer = viewer;
-      this.$refs.mouseInfo.getInfo(viewer);
+      // this.$refs.mouseInfo.getInfo(viewer);
     },
     handleAddLabel() {
       console.log(global);

@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-15 20:07:10
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 14:50:07
+ * @LastEditTime: 2020-07-21 19:19:32
  * @Description:
  */
 module.exports = {
@@ -23,6 +23,7 @@ module.exports = {
     'padded-blocks': 0,
     'no-unused-vars': 0,
     'no-trailing-spaces': 0,
+    'no-console': 'off',
     'no-mixed-spaces-and-tabs': 0,
     'space-before-function-paren': [0, 'always'],
     'no-multiple-empty-lines': 0

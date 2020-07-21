@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-21 18:24:31
+ * @LastEditTime: 2020-07-21 19:19:00
  * @Description: vue配置文件
  */
 'use strict';

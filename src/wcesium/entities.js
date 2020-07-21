@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-20 16:15:06
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-20 18:36:33
+ * @LastEditTime: 2020-07-21 11:03:05
  * @Description:实体的增删改查
  */
 import { cloneDeep, isFunction } from './core';
@@ -86,12 +86,18 @@ function addBillboard(viewer, option) {
     billboard: {
       // show: false,
       image: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=706556033,4228383680&fm=26&gp=0.jpg',
-      pixelOffset: new Cesium.Cartesian2(0, 0),
-      eyeOffset: new Cesium.Cartesian3(0.0, 0.0, 0.0),
-      horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
-      verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+      // pixelOffset: new Cesium.Cartesian2(0, 0),
+      // eyeOffset: new Cesium.Cartesian3(0.0, 0.0, 0.0),
+      // horizontalOrigin: Cesium.HorizontalOrigin.CENTER,
+      // verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+      // width: 32,
+      // height: 32,
+
+      heightReference: Cesium.HeightReference.CLAMP_TO_GROUND,
+      verticalOrigin: 0,
       width: 32,
-      height: 32
+      height: 145,
+      pixelOffset: new Cesium.Cartesian2(0, -72)
     }
   };
   option = cloneDeep(config, option);

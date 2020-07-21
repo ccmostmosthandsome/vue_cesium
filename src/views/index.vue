@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-05-12 17:17:38
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-20 19:27:01
+ * @LastEditTime: 2020-07-21 17:26:46
  * @Description:
 -->
 <template>
@@ -15,6 +15,7 @@
       <button @click="handleRemoveByAttr">根据属性获取实体</button>
       <button @click="handleRemoveAllEntities">删除所有实体</button>
       <button @click="handleGetAllLayer">获取所有图层</button>
+      <button @click="handleSkyBox">隐藏/显示星空</button>
     </div>
     <Wviewer @on-viewer-completed="viewerCompletedHandler">
       <div class="box" style="width:200px;height:200px;background-color:red" v-drag></div>
@@ -32,7 +33,9 @@ export default {
   components: { Wviewer, winfo },
   data() {
     return {
-      viewer: ''
+      viewer: '',
+      skyBoxIsShow: true,
+      event: null
     };
   },
   methods: {
@@ -68,6 +71,16 @@ export default {
     handleGetAllLayer() {
       let layers = wcesium.getAllLayer(global.viewer);
       console.log(layers);
+    },
+    // 隐藏/显示星空
+    handleSkyBox() {
+      this.skyBoxIsShow = !this.skyBoxIsShow;
+      global.viewer.scene.skyBox.show = this.skyBoxIsShow;
+      console.log(!this.skyBoxIsShow, global.viewer.scene.skyBox.show);
+      global.viewer.scene.requestRender(); //重新渲染
+      if (!global.viewer.scene.skyBox.show) {
+        global.viewer.scene.backgroundColor = Cesium.Color.CORNFLOWERBLUE;
+      }
     }
   },
   mounted() {

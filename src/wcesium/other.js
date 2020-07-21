@@ -2,7 +2,7 @@
  * @Author: wangchaoxu
  * @Date: 2020-07-20 19:13:02
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-20 19:20:56
+ * @LastEditTime: 2020-07-21 17:09:10
  * @Description: cesium的扩展功能
  */
 import CesiumNavigation from 'cesium-navigation-es6';
@@ -23,7 +23,12 @@ function addNav(viewer) {
   };
   CesiumNavigation(viewer, options);
 }
-
+/**
+ * @description: 移动获取信息
+ * @param {type}
+ * @return:
+ * @author: wangchaoxu
+ */
 function moveGetInfo(viewer, callback) {
   mouseMove(viewer, function(cartographic) {
     let cityLng = Cesium.Math.toDegrees(cartographic.longitude);
@@ -35,4 +40,31 @@ function moveGetInfo(viewer, callback) {
   });
 }
 
-export { addNav, moveGetInfo };
+/**
+ * @description:信息窗口
+ * @param {type}
+ * @return:
+ * @author: wangchaoxu
+ */
+function infoWindow(viewer, htmlOverlay, lng, lat, height = 50) {
+  var scratch = new Cesium.Cartesian2();
+  let event = viewer.scene.preRender.addEventListener(() => {
+    var position = Cesium.Cartesian3.fromDegrees(lng, lat, height);
+    var canvasPosition = viewer.scene.cartesianToCanvasCoordinates(position, scratch);
+    if (Cesium.defined(canvasPosition)) {
+      htmlOverlay.style.top = canvasPosition.y + 'px';
+      htmlOverlay.style.left = canvasPosition.x + 'px';
+    }
+  });
+  return event;
+}
+/**
+ * @description: 接触infowindow的事件监听
+ * @param {Function }  infoWindow 返回值
+ * @author: wangchaoxu
+ */
+function infoWindowClose(el, event) {
+  event();
+}
+
+export { addNav, moveGetInfo, infoWindow, infoWindowClose };

@@ -1,14 +1,15 @@
 /*
  * @Author: wangchaoxu
- * @Date: 2020-07-16 16:11:14
+ * @Date: 2020-07-21 09:07:12
  * @LastEditors: wangchaoxu
- * @LastEditTime: 2020-07-16 18:06:00
- * @Description:地球初始化
+ * @LastEditTime: 2020-07-21 16:35:33
+ * @Description:关于视图的操作
  */
+
 import config from './config';
-function initViewer() {
-  Cesium.Ion.defaultAccessToken = config.CESIUM_TOKEN;
-  let viewer = new Cesium.Viewer('cesiumContainer', {
+import { cloneDeep } from './core';
+function initViewer(config = {}) {
+  let option = {
     //放大镜图标，查找位置工具，查找到之后会将镜头对准找到的地址，默认使用bing地图
     geocoder: false,
     //房子图标，视角返回初始位置
@@ -36,11 +37,16 @@ function initViewer() {
     //关闭点击要素铝框
     selectionIndicator: false,
     terrainExaggeration: 3.0 //地形夸大
-  });
+  };
+  option = cloneDeep(option, config);
+  Cesium.Ion.defaultAccessToken = config.CESIUM_TOKEN;
+  let viewer = new Cesium.Viewer('cesiumContainer', option);
   viewer.cesiumWidget._creditContainer.style.display = 'none'; //移除版权
+  viewer.scene.debugShowFramesPerSecond = true; //显示帧率
   viewer.scene.backgroundColor = Cesium.Color.TRANSPARENT; //背景颜色
   viewer.scene.postProcessStages.fxaa.enabled = false; // 抗锯齿
   viewer.scene.globe.showGroundAtmosphere = true; // 水雾特效
+  // viewer.scene.requestRenderMode = true; //空闲状态下停止渲染
   // 设置最大俯仰角，[-90,0]区间内，默认为-30，单位弧度
   viewer.scene.screenSpaceCameraController.constrainedPitch = Cesium.Math.toRadians(-20);
   // 取消默认的双击事件
@@ -51,5 +57,14 @@ function initViewer() {
   viewer.scene.screenSpaceCameraController._maximumZoomRate = 30762720; //设置相机放大时的速率
   return viewer;
 }
+/**
+ * @description: 视图飞到某处
+ * @param {Object} viewer对象
+ * @param {String} 笛卡尔空间坐标 coordinate
+ * @author: wangchaoxu
+ */
+function flyTo(viewer, coordinate) {
+  viewer.camera.flyTo({ destination: Cesium.Cartesian3.fromDegrees(103.84, 31.15, 5050000) });
+}
 
-export default initViewer;
+export { initViewer, flyTo };
